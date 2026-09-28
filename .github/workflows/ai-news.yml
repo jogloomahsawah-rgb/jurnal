@@ -20,4 +20,4 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
-          ARTICLE_LANG: English   # change to Indonesian if you want Indonesian articles
+          ARTICLE_LANG: Indonesian   # change to Indonesian if you want Indonesian articles
