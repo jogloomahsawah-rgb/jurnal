@@ -59,9 +59,9 @@ h1,h2,h3{font-family:var(--head);font-weight:800;line-height:.98;margin:0;letter
 .pitch *{vector-effect:non-scaling-stroke;stroke-width:2px}
 
 /* lead */
-.lead{display:block;position:relative;text-decoration:none;color:var(--chalk);margin-bottom:12px;overflow:hidden}
-.lead .cover{aspect-ratio:16/9}
-.lead-body{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:28px 24px 22px;background:linear-gradient(transparent,rgba(5,16,10,.92) 60%)}
+.lead{display:block;position:relative;text-decoration:none;color:var(--chalk);margin-bottom:12px}
+.lead .cover{position:absolute;inset:0;aspect-ratio:auto}
+.lead-body{position:relative;min-height:260px;display:flex;flex-direction:column;justify-content:flex-end;padding:28px 24px 22px;background:linear-gradient(transparent,rgba(5,16,10,.92) 60%)}
 .lead h2{font-size:clamp(2.4rem,6.2vw,4.8rem);max-width:16ch;margin:10px 0 8px}
 .lead p{margin:0;max-width:56ch;font-size:1.05rem;color:rgba(244,246,240,.88)}
 
