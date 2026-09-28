@@ -1,0 +1,24 @@
+name: AI news batch
+on:
+  schedule:
+    - cron: "0 23 * * *"   # 06:00 WIB
+    - cron: "0 8 * * *"    # 15:00 WIB
+  workflow_dispatch: {}     # "Run workflow" button for a manual batch
+concurrency: ai-news
+jobs:
+  batch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - run: npm install --no-audit --no-fund
+        working-directory: ai-agent
+      - run: node generate.mjs
+        working-directory: ai-agent
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          ARTICLE_LANG:  Indonesian # change to Indonesian if you want Indonesian articles
+          
