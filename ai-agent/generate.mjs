@@ -4,7 +4,7 @@ import admin from "firebase-admin";
 
 const KEY = process.env.GEMINI_API_KEY;
 const MODEL = process.env.GEMINI_MODEL || "gemini-2.5-flash"; // free tier + free search grounding quota
-const LANG = process.env.ARTICLE_LANG || "Indonesian";   // e.g. "Indonesian"
+const LANG = process.env.ARTICLE_LANG || "Indonesian";   // e.g. "Indonesian" or English 
 if (!KEY || !process.env.FIREBASE_SERVICE_ACCOUNT) { console.error("Missing GEMINI_API_KEY or FIREBASE_SERVICE_ACCOUNT"); process.exit(1); }
 
 admin.initializeApp({ credential: admin.credential.cert(JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT)) });
